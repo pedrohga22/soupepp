@@ -1,0 +1,1239 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diagnóstico dos Vieses do Líder — Sou PEPP</title>
+  <meta name="description" content="Em 3 minutos descubra quais vieses estão dominando suas decisões hoje. Por Pedro Araujo, criador do método Sou PEPP.">
+  <meta property="og:title" content="Diagnóstico dos Vieses do Líder — Sou PEPP">
+  <meta property="og:description" content="8 perguntas. 3 minutos. Descubra quais vieses dominam suas decisões.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* ============================================================
+       SOU PEPP — DESIGN SYSTEM
+       Mesmo DNA visual do deck VF6
+       ============================================================ */
+    :root {
+      --bg: #0F1117;
+      --bg-elev: #1A1F2E;
+      --border: #2D3748;
+      --border-soft: #1F2533;
+      --footer: #0A0C12;
+      --green: #00E676;
+      --green-dim: #00B85E;
+      --blue: #42A5F5;
+      --orange: #FF7043;
+      --red: #EF5350;
+      --yellow: #FFC107;
+      --white: #FFFFFF;
+      --text-primary: #FFFFFF;
+      --text-secondary: #B0BEC5;
+      --text-muted: #78909C;
+      --text-dim: #546E7A;
+      --font-display: 'Fraunces', Georgia, serif;
+      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --shadow-soft: 0 8px 32px rgba(0, 0, 0, 0.4);
+      --shadow-hard: 0 20px 60px rgba(0, 230, 118, 0.15);
+      --transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.6;
+      min-height: 100vh;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Subtle grain texture */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.025;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+      z-index: 1;
+    }
+
+    /* Ambient gradient orb */
+    body::after {
+      content: '';
+      position: fixed;
+      top: -200px;
+      right: -200px;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(0, 230, 118, 0.08) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .container {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 60px 32px;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* ============================================================
+       HEADER
+       ============================================================ */
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 80px;
+      animation: fadeInDown 0.8s var(--transition) both;
+    }
+
+    .brand-mark {
+      width: 32px;
+      height: 4px;
+      background: var(--green);
+    }
+
+    .brand-name {
+      font-family: var(--font-body);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      color: var(--green);
+      text-transform: uppercase;
+    }
+
+    /* ============================================================
+       HERO / INTRO
+       ============================================================ */
+    .hero {
+      margin-bottom: 80px;
+      animation: fadeInUp 1s var(--transition) 0.2s both;
+    }
+
+    .hero-eyebrow {
+      font-size: 11px;
+      letter-spacing: 4px;
+      color: var(--green);
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 500;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      color: var(--text-primary);
+      margin-bottom: 28px;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--green);
+      font-weight: 400;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1rem, 1.5vw, 1.15rem);
+      color: var(--text-secondary);
+      max-width: 580px;
+      line-height: 1.7;
+      margin-bottom: 40px;
+    }
+
+    .hero-meta {
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+      padding-top: 32px;
+      border-top: 1px solid var(--border-soft);
+    }
+
+    .hero-meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .hero-meta-value {
+      font-family: var(--font-display);
+      font-size: 28px;
+      font-weight: 600;
+      color: var(--green);
+      line-height: 1;
+    }
+
+    .hero-meta-label {
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    /* ============================================================
+       START BUTTON
+       ============================================================ */
+    .btn-start {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--green);
+      color: var(--bg);
+      padding: 18px 36px;
+      border: none;
+      font-family: var(--font-body);
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      transition: all var(--transition);
+      text-transform: uppercase;
+      margin-top: 40px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-start::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--white);
+      transform: translateY(100%);
+      transition: transform var(--transition);
+      z-index: 0;
+    }
+
+    .btn-start span,
+    .btn-start svg {
+      position: relative;
+      z-index: 1;
+      transition: color var(--transition);
+    }
+
+    .btn-start:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-hard);
+    }
+
+    .btn-start:hover::before {
+      transform: translateY(0);
+    }
+
+    .btn-start svg {
+      width: 16px;
+      height: 16px;
+      transition: transform var(--transition);
+    }
+
+    .btn-start:hover svg {
+      transform: translateX(4px);
+    }
+
+    /* ============================================================
+       QUESTION VIEW
+       ============================================================ */
+    .quiz {
+      display: none;
+      animation: fadeInUp 0.6s var(--transition);
+    }
+
+    .quiz.active {
+      display: block;
+    }
+
+    .progress-shell {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 60px;
+    }
+
+    .progress-track {
+      flex: 1;
+      height: 2px;
+      background: var(--border);
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: var(--green);
+      width: 0%;
+      transition: width 0.5s var(--transition);
+    }
+
+    .progress-count {
+      font-family: var(--font-display);
+      font-size: 14px;
+      color: var(--text-muted);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .progress-count strong {
+      color: var(--green);
+      font-weight: 600;
+    }
+
+    .question-number {
+      font-size: 11px;
+      letter-spacing: 4px;
+      color: var(--green);
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      opacity: 0;
+      animation: fadeIn 0.5s 0.1s both;
+    }
+
+    .question-text {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 3.5vw, 2.5rem);
+      font-weight: 400;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+      margin-bottom: 60px;
+      max-width: 760px;
+      opacity: 0;
+      animation: fadeInUp 0.6s 0.2s both;
+    }
+
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .option {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 22px 28px;
+      background: var(--bg-elev);
+      border: 1px solid var(--border);
+      cursor: pointer;
+      transition: all 0.25s var(--transition);
+      font-family: var(--font-body);
+      font-size: 16px;
+      color: var(--text-secondary);
+      text-align: left;
+      width: 100%;
+      opacity: 0;
+      transform: translateY(10px);
+      animation: fadeInUp 0.5s var(--transition) both;
+    }
+
+    .option:nth-child(1) { animation-delay: 0.3s; }
+    .option:nth-child(2) { animation-delay: 0.4s; }
+    .option:nth-child(3) { animation-delay: 0.5s; }
+    .option:nth-child(4) { animation-delay: 0.6s; }
+
+    .option-marker {
+      width: 28px;
+      height: 28px;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.25s var(--transition);
+      position: relative;
+    }
+
+    .option-marker::after {
+      content: '';
+      width: 10px;
+      height: 10px;
+      background: var(--green);
+      border-radius: 50%;
+      transform: scale(0);
+      transition: transform 0.25s var(--transition);
+    }
+
+    .option:hover {
+      background: var(--border-soft);
+      border-color: var(--green-dim);
+      color: var(--text-primary);
+      transform: translateX(4px);
+    }
+
+    .option:hover .option-marker {
+      border-color: var(--green);
+    }
+
+    .option.selected {
+      background: rgba(0, 230, 118, 0.08);
+      border-color: var(--green);
+      color: var(--text-primary);
+    }
+
+    .option.selected .option-marker {
+      border-color: var(--green);
+    }
+
+    .option.selected .option-marker::after {
+      transform: scale(1);
+    }
+
+    /* ============================================================
+       RESULT VIEW
+       ============================================================ */
+    .result {
+      display: none;
+      animation: fadeInUp 0.8s var(--transition);
+    }
+
+    .result.active { display: block; }
+
+    .result-eyebrow {
+      font-size: 11px;
+      letter-spacing: 4px;
+      color: var(--green);
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .result-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 500;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+    }
+
+    .result-title em {
+      font-style: italic;
+      color: var(--green);
+      font-weight: 400;
+    }
+
+    .result-lead {
+      font-size: clamp(1.05rem, 1.6vw, 1.2rem);
+      color: var(--text-secondary);
+      line-height: 1.7;
+      max-width: 680px;
+      margin-bottom: 56px;
+    }
+
+    /* Bias chart */
+    .bias-chart {
+      margin-bottom: 64px;
+      padding: 40px;
+      background: var(--bg-elev);
+      border: 1px solid var(--border);
+    }
+
+    .bias-chart-title {
+      font-size: 11px;
+      letter-spacing: 4px;
+      color: var(--green);
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 32px;
+    }
+
+    .bias-row {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 22px;
+    }
+
+    .bias-label {
+      flex: 0 0 220px;
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 500;
+      color: var(--text-primary);
+    }
+
+    .bias-bar-track {
+      flex: 1;
+      height: 6px;
+      background: var(--border);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .bias-bar-fill {
+      height: 100%;
+      width: 0%;
+      transition: width 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+      transition-delay: 0.3s;
+    }
+
+    .bias-bar-fill.high { background: var(--red); }
+    .bias-bar-fill.medium { background: var(--yellow); }
+    .bias-bar-fill.low { background: var(--green); }
+
+    .bias-score {
+      flex: 0 0 50px;
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 600;
+      text-align: right;
+    }
+
+    .bias-score.high { color: var(--red); }
+    .bias-score.medium { color: var(--yellow); }
+    .bias-score.low { color: var(--green); }
+
+    /* Recommendations */
+    .recs {
+      margin-bottom: 80px;
+    }
+
+    .recs-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 500;
+      color: var(--text-primary);
+      margin-bottom: 40px;
+      letter-spacing: -0.02em;
+    }
+
+    .rec {
+      display: grid;
+      grid-template-columns: 60px 1fr;
+      gap: 28px;
+      padding: 28px 0;
+      border-top: 1px solid var(--border-soft);
+    }
+
+    .rec:last-child {
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+    .rec-num {
+      font-family: var(--font-display);
+      font-size: 28px;
+      font-weight: 600;
+      color: var(--green);
+      line-height: 1;
+    }
+
+    .rec-content h3 {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 500;
+      color: var(--text-primary);
+      margin-bottom: 10px;
+      letter-spacing: -0.01em;
+    }
+
+    .rec-content p {
+      color: var(--text-secondary);
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    /* Restart */
+    .restart {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--text-muted);
+      background: none;
+      border: none;
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      padding: 12px 0;
+      transition: color 0.2s;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      text-decoration-color: var(--border);
+    }
+
+    .restart:hover {
+      color: var(--green);
+    }
+
+    /* ============================================================
+       FOLLOW-UP CTA (Web3Forms email capture)
+       ============================================================ */
+    .cta {
+      display: none;
+      margin-top: 100px;
+      padding-top: 80px;
+      border-top: 1px solid var(--border-soft);
+    }
+
+    .cta.active { display: block; }
+
+    .cta-eyebrow {
+      font-size: 11px;
+      letter-spacing: 4px;
+      color: var(--green);
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .cta-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      font-weight: 500;
+      line-height: 1.2;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+      max-width: 640px;
+    }
+
+    .cta-lead {
+      color: var(--text-secondary);
+      font-size: 15px;
+      line-height: 1.7;
+      max-width: 580px;
+      margin-bottom: 40px;
+    }
+
+    .cta-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      max-width: 640px;
+      margin-bottom: 20px;
+    }
+
+    .cta-form input {
+      background: var(--bg-elev);
+      border: 1px solid var(--border);
+      padding: 18px 20px;
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      font-size: 15px;
+      transition: border-color 0.2s;
+      outline: none;
+    }
+
+    .cta-form input::placeholder {
+      color: var(--text-muted);
+    }
+
+    .cta-form input:focus {
+      border-color: var(--green);
+    }
+
+    .cta-submit {
+      background: transparent;
+      color: var(--green);
+      border: 1px solid var(--green);
+      padding: 18px 36px;
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: all 0.25s var(--transition);
+      text-transform: uppercase;
+      margin-top: 8px;
+    }
+
+    .cta-submit:hover:not(:disabled) {
+      background: var(--green);
+      color: var(--bg);
+    }
+
+    .cta-submit:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .cta-success {
+      display: none;
+      padding: 24px;
+      background: rgba(0, 230, 118, 0.08);
+      border: 1px solid var(--green);
+      color: var(--green);
+      font-size: 15px;
+      max-width: 640px;
+      margin-top: 20px;
+    }
+
+    .cta-success.active { display: block; }
+
+    /* ============================================================
+       FOOTER
+       ============================================================ */
+    .footer {
+      margin-top: 120px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border-soft);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-brand {
+      font-size: 11px;
+      letter-spacing: 3px;
+      color: var(--green);
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .footer-meta {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .footer-meta a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-meta a:hover {
+      color: var(--green);
+    }
+
+    /* ============================================================
+       ANIMATIONS
+       ============================================================ */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ============================================================
+       RESPONSIVE
+       ============================================================ */
+    @media (max-width: 720px) {
+      .container { padding: 40px 24px; }
+      .brand { margin-bottom: 56px; }
+      .hero { margin-bottom: 56px; }
+      .hero-meta { gap: 24px; }
+      .hero-meta-value { font-size: 22px; }
+      .bias-chart { padding: 28px 20px; }
+      .bias-row { flex-direction: column; align-items: flex-start; gap: 8px; }
+      .bias-label { flex: none; font-size: 15px; }
+      .bias-bar-track { width: 100%; }
+      .bias-score { flex: none; text-align: left; font-size: 15px; }
+      .rec { grid-template-columns: 40px 1fr; gap: 16px; padding: 22px 0; }
+      .rec-num { font-size: 22px; }
+      .rec-content h3 { font-size: 18px; }
+      .cta-form { grid-template-columns: 1fr; }
+      .option { padding: 18px 20px; font-size: 14px; }
+      .footer { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <header class="brand">
+      <div class="brand-mark"></div>
+      <div class="brand-name">SOU PEPP &middot; PEDRO ARAUJO</div>
+    </header>
+
+    <!-- ===== INTRO / HERO ===== -->
+    <section class="hero" id="hero">
+      <div class="hero-eyebrow">DIAGNÓSTICO DOS VIESES DO LÍDER</div>
+      <h1 class="hero-title">Quais vieses dominam <em>suas decisões</em>?</h1>
+      <p class="hero-subtitle">
+        Em 3 minutos, descubra os padrões emocionais que estão moldando sua liderança hoje &mdash; e o que fazer com cada um. Sem login. Sem espera. Resultado na hora.
+      </p>
+
+      <div class="hero-meta">
+        <div class="hero-meta-item">
+          <div class="hero-meta-value">8</div>
+          <div class="hero-meta-label">Perguntas</div>
+        </div>
+        <div class="hero-meta-item">
+          <div class="hero-meta-value">3min</div>
+          <div class="hero-meta-label">Duração</div>
+        </div>
+        <div class="hero-meta-item">
+          <div class="hero-meta-value">5</div>
+          <div class="hero-meta-label">Vieses analisados</div>
+        </div>
+      </div>
+
+      <button class="btn-start" onclick="startQuiz()">
+        <span>Iniciar diagnóstico</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path d="M5 12h14M13 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </section>
+
+    <!-- ===== QUIZ ===== -->
+    <section class="quiz" id="quiz">
+      <div class="progress-shell">
+        <div class="progress-track">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+        <div class="progress-count">
+          <strong id="qCurrent">1</strong> de <span id="qTotal">8</span>
+        </div>
+      </div>
+
+      <div class="question-number" id="qNumber">PERGUNTA 01</div>
+      <h2 class="question-text" id="qText">&ldquo;Quando vejo colega/amigo crescendo mais rápido, fico questionando minhas escolhas.&rdquo;</h2>
+
+      <div class="options" id="qOptions">
+        <!-- Options injected by JS -->
+      </div>
+    </section>
+
+    <!-- ===== RESULT ===== -->
+    <section class="result" id="result">
+      <div class="result-eyebrow">SEU PERFIL</div>
+      <h2 class="result-title" id="resultTitle">Seu padrão dominante é <em id="resultDominantBias">a Armadilha do Vizinho</em>.</h2>
+      <p class="result-lead" id="resultLead"></p>
+
+      <div class="bias-chart">
+        <div class="bias-chart-title">SEUS 5 VIESES &middot; intensidade detectada</div>
+        <div id="biasRows"></div>
+      </div>
+
+      <div class="recs">
+        <h3 class="recs-title">3 movimentos práticos pra essa semana</h3>
+        <div id="recsContainer"></div>
+      </div>
+
+      <button class="restart" onclick="restartQuiz()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 12a9 9 0 1 0 3-6.7L3 8M3 3v5h5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Refazer diagnóstico
+      </button>
+    </section>
+
+    <!-- ===== CTA / EMAIL CAPTURE ===== -->
+    <section class="cta" id="cta">
+      <div class="cta-eyebrow">CONTINUE A JORNADA</div>
+      <h3 class="cta-title">Quer receber materiais avançados sobre vieses e liderança?</h3>
+      <p class="cta-lead">
+        Deixe seu contato e receba estudos, ferramentas e provocações que aprofundam o que você acabou de descobrir. Sem spam &mdash; só conteúdo que importa.
+      </p>
+
+      <form class="cta-form" id="ctaForm">
+        <input type="hidden" name="access_key" value="447f478b-f49c-4f1d-8e10-4501bd671212">
+        <input type="hidden" name="subject" value="[Sou PEPP] Novo lead do Diagnóstico">
+        <input type="hidden" name="from_name" value="Diagnóstico Sou PEPP">
+        <input type="hidden" name="diagnostic_result" id="ctaResultData" value="">
+        <input type="text" name="name" placeholder="Seu nome" required autocomplete="name">
+        <input type="email" name="email" placeholder="seu@email.com" required autocomplete="email">
+      </form>
+
+      <button type="submit" form="ctaForm" class="cta-submit" id="ctaSubmit">
+        Quero receber
+      </button>
+
+      <div class="cta-success" id="ctaSuccess">
+        Obrigado. Em breve você recebe os primeiros materiais.
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-brand">SOU PEPP</div>
+      <div class="footer-meta">
+        Pedro Araujo &middot;
+        <a href="https://www.linkedin.com/in/pedrohga" target="_blank" rel="noopener">LinkedIn</a> &middot;
+        <a href="https://soupepp.com.br">soupepp.com.br</a>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    // ============================================================
+    // DATA — Questions, scoring, biases
+    // ============================================================
+    const QUESTIONS = [
+      { text: "Quando vejo colega ou amigo crescendo mais rápido, fico questionando minhas próprias escolhas.", bias: "vizinho" },
+      { text: "Comparo minha trajetória com a de outros pelo menos uma vez por semana.", bias: "vizinho" },
+      { text: "Sinto que uma única oportunidade certa pode mudar minha carreira de patamar.", bias: "lottery" },
+      { text: "Já saí (ou pensei seriamente em sair) de um lugar atrás de um salto rápido.", bias: "lottery" },
+      { text: "Quando algo dá errado, sinto necessidade urgente de fazer alguma coisa pra mostrar reação.", bias: "action" },
+      { text: "Respondo emails ou tomo decisões importantes em menos de uma hora quando estou sob pressão.", bias: "action" },
+      { text: "Confio bastante na minha intuição em decisões importantes — minha experiência geralmente acerta.", bias: "overconfidence" },
+      { text: "Evitar uma perda é mais importante pra mim do que conquistar um ganho equivalente.", bias: "lossaversion" }
+    ];
+
+    const OPTIONS = [
+      { label: "Discordo totalmente", value: 1 },
+      { label: "Discordo", value: 2 },
+      { label: "Concordo", value: 3 },
+      { label: "Concordo totalmente", value: 4 }
+    ];
+
+    const BIAS_META = {
+      vizinho: {
+        name: "Armadilha do Vizinho",
+        short: "vizinho",
+        article: "a"
+      },
+      lottery: {
+        name: "Lottery Ticket",
+        short: "lottery",
+        article: "o"
+      },
+      action: {
+        name: "Action Bias",
+        short: "action",
+        article: "o"
+      },
+      overconfidence: {
+        name: "Excesso de Confiança",
+        short: "overconfidence",
+        article: "o"
+      },
+      lossaversion: {
+        name: "Aversão à Perda",
+        short: "lossaversion",
+        article: "a"
+      }
+    };
+
+    // Recommendations per dominant bias (3 actionable items each)
+    const RECS = {
+      vizinho: [
+        {
+          title: "Pausa de 30 dias do LinkedIn",
+          body: "Por um mês inteiro, não abra o feed. O algoritmo te mostra apenas vitórias selecionadas de outras pessoas. Você está comparando sua rotina inteira com o highlight reel alheio."
+        },
+        {
+          title: "Lista \"o que só eu tenho\"",
+          body: "Domingo à noite, escreva 3 coisas que só você na sua posição tem. Pode ser network, conhecimento técnico, contexto familiar, timing. Compare com isso, não com outros."
+        },
+        {
+          title: "Calibre seu termômetro",
+          body: "Antes de comparar, pergunte: \"Eu trocaria a carteira inteira dele pela minha?\". Quase sempre a resposta é não. Comparação seletiva é fantasia, não dado."
+        }
+      ],
+      lottery: [
+        {
+          title: "Regra dos 90 dias",
+          body: "Toda decisão de salto profissional precisa esperar 90 dias antes de ser executada. Não cancela a vontade, atrasa a impulsividade. A maioria das \"oportunidades únicas\" não sobrevive a esse prazo."
+        },
+        {
+          title: "Mapeie o efetivo, não o potencial",
+          body: "Pegue a oferta nova e a sua atual. Liste 5 variáveis cada uma: salário, aprendizado, network, qualidade de vida, risco. A oferta nova vence em pelo menos 4? Se não, é Lottery Ticket."
+        },
+        {
+          title: "Conversa com o seu eu de 5 anos atrás",
+          body: "Você teria invejado quem você é hoje? Provavelmente sim. Mesmo assim você quer pular. Esse desejo é sintoma, não diagnóstico."
+        }
+      ],
+      action: [
+        {
+          title: "A regra das 6 horas",
+          body: "Toda decisão importante tomada sob estresse é arquivada por 6 horas antes de ser executada. Email passivo-agressivo do chefe não vira resposta imediata. Reunião tensa não vira reestruturação."
+        },
+        {
+          title: "Pratique o nada",
+          body: "Esta semana, em uma situação de pressão, faça nada de propósito. Observa o desconforto. É exatamente esse desconforto que faz 94% dos goleiros pularem pro lado errado."
+        },
+        {
+          title: "Pré-comprometimento por escrito",
+          body: "Antes de cada reunião difícil, escreva em uma frase: \"Decisões que eu não vou tomar nesta conversa\". Tira a pressão de agir como prova de competência."
+        }
+      ],
+      overconfidence: [
+        {
+          title: "Diário de erros",
+          body: "Por 4 semanas, anote toda decisão importante e a sua certeza percebida (1-10). Volte 30 dias depois e confira. A diferença entre certeza e acerto é seu coeficiente de viés."
+        },
+        {
+          title: "Designe um cético",
+          body: "Em decisões importantes, peça pra uma pessoa específica do seu círculo te dar o argumento contrário. Não pra você refutar — pra você considerar. Excesso de confiança morre na fricção."
+        },
+        {
+          title: "Pré-mortem",
+          body: "Antes de uma decisão grande, escreva: \"É 2 anos depois e isso fracassou. Por quê?\". Esse exercício revela ângulos que confiança esconde."
+        }
+      ],
+      lossaversion: [
+        {
+          title: "Separe risco de perda",
+          body: "Risco é probabilidade calculada. Perda é narrativa emocional. Toda vez que sentir paralisia, pergunte: \"Estou evitando perda real ou imaginária?\". Geralmente é a segunda."
+        },
+        {
+          title: "Custo do não-movimento",
+          body: "Aversão à perda esquece o que você perde por não agir. Liste o que custa não tomar essa decisão por mais 6 meses. Quase sempre é mais caro do que a perda potencial."
+        },
+        {
+          title: "Apostas pequenas, recorrentes",
+          body: "Em vez de uma aposta grande aterrorizante, faça apostas pequenas testáveis. Carreira, investimento, conversa difícil. Aversão à perda é vencida por dose, não por coragem."
+        }
+      ]
+    };
+
+    // Generic lead phrasing per dominance level
+    function leadFor(biasKey, score) {
+      const meta = BIAS_META[biasKey];
+      const intensity = score >= 7 ? "fortemente presente" : score >= 5 ? "presente" : "moderadamente presente";
+      return `Esse padrão aparece ${intensity} nas suas respostas. Não é um defeito — é uma tendência humana que, quando consciente, vira disciplina. Sem consciência, vira teto invisível.`;
+    }
+
+    // ============================================================
+    // STATE
+    // ============================================================
+    let currentQuestion = 0;
+    let answers = []; // index -> { bias, value }
+
+    const elQCurrent = document.getElementById('qCurrent');
+    const elQTotal = document.getElementById('qTotal');
+    const elQNumber = document.getElementById('qNumber');
+    const elQText = document.getElementById('qText');
+    const elQOptions = document.getElementById('qOptions');
+    const elProgressFill = document.getElementById('progressFill');
+    const elHero = document.getElementById('hero');
+    const elQuiz = document.getElementById('quiz');
+    const elResult = document.getElementById('result');
+    const elCta = document.getElementById('cta');
+
+    elQTotal.textContent = QUESTIONS.length;
+
+    // ============================================================
+    // FLOW
+    // ============================================================
+    function startQuiz() {
+      currentQuestion = 0;
+      answers = [];
+      elHero.style.display = 'none';
+      elResult.classList.remove('active');
+      elCta.classList.remove('active');
+      elQuiz.classList.add('active');
+      renderQuestion();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function renderQuestion() {
+      const q = QUESTIONS[currentQuestion];
+      const pct = (currentQuestion / QUESTIONS.length) * 100;
+      elProgressFill.style.width = pct + '%';
+      elQCurrent.textContent = currentQuestion + 1;
+      elQNumber.textContent = 'PERGUNTA ' + String(currentQuestion + 1).padStart(2, '0');
+      elQText.innerHTML = '&ldquo;' + q.text + '&rdquo;';
+
+      // Reset animations
+      elQNumber.style.animation = 'none';
+      elQText.style.animation = 'none';
+      void elQNumber.offsetWidth; // trigger reflow
+      void elQText.offsetWidth;
+      elQNumber.style.animation = '';
+      elQText.style.animation = '';
+
+      // Render options
+      elQOptions.innerHTML = '';
+      OPTIONS.forEach((opt, idx) => {
+        const btn = document.createElement('button');
+        btn.className = 'option';
+        btn.innerHTML = `
+          <div class="option-marker"></div>
+          <span>${opt.label}</span>
+        `;
+        btn.addEventListener('click', () => selectOption(opt.value, q.bias, btn));
+        elQOptions.appendChild(btn);
+      });
+    }
+
+    function selectOption(value, bias, btnEl) {
+      // Visual feedback
+      document.querySelectorAll('.option').forEach(o => o.classList.remove('selected'));
+      btnEl.classList.add('selected');
+
+      answers[currentQuestion] = { bias, value };
+
+      // Advance after micro-pause for visual feedback
+      setTimeout(() => {
+        currentQuestion++;
+        if (currentQuestion < QUESTIONS.length) {
+          renderQuestion();
+        } else {
+          showResult();
+        }
+      }, 380);
+    }
+
+    // ============================================================
+    // SCORING & RESULT
+    // ============================================================
+    function computeScores() {
+      // Sum scores per bias, normalize to 0-10
+      const totals = {};
+      const counts = {};
+      for (const k of Object.keys(BIAS_META)) {
+        totals[k] = 0; counts[k] = 0;
+      }
+      answers.forEach(a => {
+        totals[a.bias] += a.value;
+        counts[a.bias] += 1;
+      });
+      const result = {};
+      for (const k of Object.keys(BIAS_META)) {
+        if (counts[k] === 0) {
+          // No questions for this bias — derive from related biases
+          // For Excesso de Confiança and Aversão à Perda we only have 1 question each, so use raw value
+          result[k] = 0;
+        } else {
+          // Average per bias, scaled from 1-4 to 0-10
+          // min=1 → 0, max=4 → 10. Formula: ((avg - 1) / 3) * 10
+          const avg = totals[k] / counts[k];
+          result[k] = Math.round(((avg - 1) / 3) * 10);
+        }
+      }
+      return result;
+    }
+
+    function intensityClass(score) {
+      if (score >= 7) return 'high';
+      if (score >= 4) return 'medium';
+      return 'low';
+    }
+
+    function showResult() {
+      elQuiz.classList.remove('active');
+      const scores = computeScores();
+
+      // Sort biases by score desc
+      const ranked = Object.entries(scores).sort((a, b) => b[1] - a[1]);
+      const [topKey, topScore] = ranked[0];
+      const topMeta = BIAS_META[topKey];
+
+      // Title
+      document.getElementById('resultDominantBias').textContent =
+        topMeta.article + ' ' + topMeta.name;
+
+      // Lead
+      document.getElementById('resultLead').textContent = leadFor(topKey, topScore);
+
+      // Chart
+      const biasRows = document.getElementById('biasRows');
+      biasRows.innerHTML = '';
+      ranked.forEach(([key, score]) => {
+        const cls = intensityClass(score);
+        const row = document.createElement('div');
+        row.className = 'bias-row';
+        row.innerHTML = `
+          <div class="bias-label">${BIAS_META[key].name}</div>
+          <div class="bias-bar-track">
+            <div class="bias-bar-fill ${cls}" data-target="${score * 10}"></div>
+          </div>
+          <div class="bias-score ${cls}">${score}/10</div>
+        `;
+        biasRows.appendChild(row);
+      });
+
+      // Recommendations
+      const recsContainer = document.getElementById('recsContainer');
+      recsContainer.innerHTML = '';
+      const recs = RECS[topKey] || [];
+      recs.forEach((rec, i) => {
+        const div = document.createElement('div');
+        div.className = 'rec';
+        div.innerHTML = `
+          <div class="rec-num">${String(i + 1).padStart(2, '0')}</div>
+          <div class="rec-content">
+            <h3>${rec.title}</h3>
+            <p>${rec.body}</p>
+          </div>
+        `;
+        recsContainer.appendChild(div);
+      });
+
+      // Encode result for email capture
+      const resultSummary = ranked.map(([k, s]) => `${BIAS_META[k].name}: ${s}/10`).join(' | ');
+      document.getElementById('ctaResultData').value = resultSummary;
+
+      elResult.classList.add('active');
+      elCta.classList.add('active');
+
+      // Trigger bar animations
+      requestAnimationFrame(() => {
+        setTimeout(() => {
+          document.querySelectorAll('.bias-bar-fill').forEach(bar => {
+            bar.style.width = bar.dataset.target + '%';
+          });
+        }, 100);
+      });
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function restartQuiz() {
+      elHero.style.display = '';
+      elResult.classList.remove('active');
+      elCta.classList.remove('active');
+      elQuiz.classList.remove('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // ============================================================
+    // EMAIL CAPTURE — Web3Forms
+    // ============================================================
+    const ctaForm = document.getElementById('ctaForm');
+    const ctaSubmit = document.getElementById('ctaSubmit');
+    const ctaSuccess = document.getElementById('ctaSuccess');
+
+    ctaSubmit.addEventListener('click', async (e) => {
+      e.preventDefault();
+      if (!ctaForm.checkValidity()) {
+        ctaForm.reportValidity();
+        return;
+      }
+      ctaSubmit.disabled = true;
+      ctaSubmit.textContent = 'Enviando...';
+
+      try {
+        const formData = new FormData(ctaForm);
+        const response = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: formData
+        });
+        const data = await response.json();
+        if (data.success) {
+          ctaForm.style.display = 'none';
+          ctaSubmit.style.display = 'none';
+          ctaSuccess.classList.add('active');
+        } else {
+          ctaSubmit.disabled = false;
+          ctaSubmit.textContent = 'Tentar novamente';
+        }
+      } catch (err) {
+        ctaSubmit.disabled = false;
+        ctaSubmit.textContent = 'Tentar novamente';
+      }
+    });
+  </script>
+
+</body>
+</html>
