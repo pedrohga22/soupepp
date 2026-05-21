@@ -96,12 +96,26 @@
       gap: 12px;
       margin-bottom: 80px;
       animation: fadeInDown 0.8s var(--transition) both;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.25s var(--transition);
+      width: fit-content;
+    }
+
+    .brand:hover {
+      opacity: 0.7;
+      transform: translateX(-2px);
     }
 
     .brand-mark {
       width: 32px;
       height: 4px;
       background: var(--green);
+      transition: width 0.25s var(--transition);
+    }
+
+    .brand:hover .brand-mark {
+      width: 40px;
     }
 
     .brand-name {
@@ -756,10 +770,10 @@
 
   <div class="container">
 
-    <header class="brand">
+    <a href="/" class="brand" aria-label="Voltar ao home">
       <div class="brand-mark"></div>
       <div class="brand-name">SOU PEPP &middot; PEDRO ARAUJO</div>
-    </header>
+    </a>
 
     <!-- ===== INTRO / HERO ===== -->
     <section class="hero" id="hero">
