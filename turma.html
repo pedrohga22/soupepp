@@ -183,6 +183,8 @@
     font-family:Georgia,serif;font-size:1.6rem;color:var(--gold);font-weight:700;
   }
   .avatar-foto{width:110px;height:110px;flex:0 0 110px;border-radius:50%;object-fit:cover;object-position:center 20%;border:2px solid var(--gold);}
+  .li-btn{display:inline-flex;align-items:center;gap:8px;padding:9px 18px;background:#0A66C2;color:#fff;border-radius:8px;font-size:.85rem;font-weight:700;text-decoration:none;margin:4px 0 10px;transition:transform .15s ease,box-shadow .15s ease;}
+  .li-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(10,102,194,.35);}
   .foto-wide{margin:28px 0 0;border-radius:14px;overflow:hidden;border:1px solid var(--card-border);}
   .foto-wide img{width:100%;display:block;}
   .foto-wide figcaption{font-size:.78rem;color:var(--muted);padding:10px 16px;background:var(--card);}
@@ -330,8 +332,9 @@
   <div class="wrap">
     <div class="section-label">Quem conduz</div>
     <h2>Pedro Araujo</h2>
+    <a class="li-btn" href="https://www.linkedin.com/in/pedro-henrique-grimaldi-de-araujo-5b087bb5/" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.27c-.97 0-1.75-.79-1.75-1.76s.78-1.76 1.75-1.76 1.75.79 1.75 1.76-.78 1.76-1.75 1.76zm13.5 12.27h-3v-5.6c0-3.37-4-3.11-4 0v5.6h-3v-11h3v1.77c1.4-2.59 7-2.78 7 2.48v6.75z"/></svg>Ver perfil no LinkedIn</a>
     <div class="facil-inner">
-      <img class="avatar-foto" src="img/close.jpg" alt="Pedro Araujo">
+      <a href="https://www.linkedin.com/in/pedro-henrique-grimaldi-de-araujo-5b087bb5/" target="_blank" rel="noopener"><img class="avatar-foto" src="img/close.jpg" alt="Pedro Araujo"></a>
       <div class="facil-txt">
         <p>Economista formado pelo <b>Insper</b>, com mais de <b>uma década no mercado financeiro</b> — do Private Banking (HSBC e Bradesco) à gestão de relacionamento com as maiores instituições de investimento do Brasil em uma gestora global. Vivência diária no jogo corporativo de alta pressão que o método ensina a dominar.</p>
         <p style="margin-top:10px;">Palestrante <b>TEDx</b>. Método já aplicado em <b>seguradoras, empresas de investimento e instituições de ensino de primeira linha</b> — agora pela primeira vez em turma aberta.</p>
